@@ -52,6 +52,26 @@ int main()
     int row;
 
     row = 0; // header
+    table[row].columns[0] = "id";
+    table[row].columns[1] = "name";
+    table[row].columns[2] = "wert";
+
+    row = 1;
+    table[row].columns[0] = "0";
+    table[row].columns[1] = "Max";
+    table[row].columns[2] = "5";
+
+    row = 2;
+    table[row].columns[0] = "1";
+    table[row].columns[1] = "Bert";
+    table[row].columns[2] = "3";
+
+    for (int row = 0; row < NUMBER_OF_ROWS; row++) {
+        for (int col = 0; col < NUMBER_OF_COLUMNS; col++) {
+            std::cout << "\t" << table[row].columns[col];
+        }
+        std::cout << std::endl;
+    }
     
 
     system("pause>0");
