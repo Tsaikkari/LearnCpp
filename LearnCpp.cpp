@@ -2,6 +2,14 @@
 #include <iomanip>
 #include <math.h>
 
+#define NUMBER_OF_COLUMNS 3
+#define NUMBER_OF_ROWS 3
+
+class Person {
+    public:
+        std::string columns[NUMBER_OF_COLUMNS];
+};
+
 void PrintSin(int number_of_steps)
 {
     float x = 0;
@@ -37,6 +45,14 @@ int main()
     int steps = 10;
 
     PrintSin(steps);
+
+    std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+
+    Person table[NUMBER_OF_ROWS];
+    int row;
+
+    row = 0; // header
+    
 
     system("pause>0");
 }
