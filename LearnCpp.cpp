@@ -4,6 +4,7 @@
 
 #define NUMBER_OF_ROWS 3
 #define NUMBER_OF_ELEMENTS 8
+#define MAX_NUM_COLUMS 30
 
 class Header {
 	public:
@@ -14,10 +15,24 @@ class Header {
 
 class Person {
     public:
-        int id;
-        std::string name;
-        int points;
+        int id=0;
+        std::string name="Luis";
+        int points=5;
 };
+
+class R {
+public:
+    int columns[MAX_NUM_COLUMS];
+};
+
+void Show2DArr(R* Table, int num_rows, int num_columns) {
+    for (int r = 0; r < num_rows; r++) {
+        for (int c = 0; c < num_columns; c++) {
+            std::cout << "\t" << Table[r].columns[c];
+        }
+        std::cout << std::endl;
+    }
+}
 
 void PrintSin(int number_of_steps)
 {
@@ -80,9 +95,9 @@ int main()
     int num_rows = 4;
     int num_columns = 3;
 
-    R Table[MAX_ZAHL_DER_COLUMS];
+    R Table[MAX_NUM_COLUMS];
     Table[0] = { 3,1,8 };
-    //Table[0].columns[0] = 66; Table[0].columns[1] = 77;
+    Table[0].columns[0] = 66; Table[0].columns[1] = 77;
     Table[1] = { 4,9,11 };
     Table[2] = { 2,2,17 };
     Table[3] = { 19,111,8 };
