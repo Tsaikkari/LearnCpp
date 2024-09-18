@@ -1,0 +1,40 @@
+Punkt_1: ein Array von Zahlen (int) erstellen (z.B A[ZahlDerElemente])
+mit beliebigen Werten.
+
+Punkt_2: LOOP 1 ("n")
+n=0:  das Maximum von den Element [von 0 bis ZahlDerElemente] bestimmen
+Punkt_3: LOOP 2 ("m")
+	Wir nehmen das erste Element (A[n]) und speichern seinen Wert in
+	einer Variable (z.B temp)
+	und vergleichen seinen Wert(temp) mit dem Wert des Nächsten.
+
+	Dann übergehen wir zum nächsten Element (A[n+1]) und wiederholen
+	das Verfahren (vergleichen den Wert von A[n+1] mit temp 
+Punkt_4:	und speichern den Wert von A[n+1] in temp und seine Nummer 
+	im Array (z.B. n_temp), falls er grösser als temp ist.) 
+	Wir wiederholen das immer weiter (LOOP m->m+1) bis wir 
+	das letzte Element erreichen (m=ZahlDerElemente -1).
+
+Punkt_5:	Jetzt tauschen wir das erste Element (mit Nummer n) mit 
+	dem maximalen (mit der Nummer n_temp)
+	
+	Code für das Tauschen: 
+		den Wert von A[n] in einer Variable speichern (z.B. a) 											[a=A[n]]
+		dem A[n] den gefundenen Maximum (temp) zuweisen 												[A[n]=temp]
+		dem vorher max Element (mit der Nummer n_temp) den Wert 
+		von a (was voher A[n] war) zuweisen	[A[n_temp]=A[n]]
+	
+n=1: das Gleiche wie im 1. für den Rest der Elementen 
+[von 1 bis ZhlDerElemente] ausführen
+
+...
+n.
+weiter das Verfahren wiederholen für den Rest der Elementen 
+(von n bis ZahlDerElemente)
+bis n=ZahlDerElemente - 1
+
+
+
+
+
+

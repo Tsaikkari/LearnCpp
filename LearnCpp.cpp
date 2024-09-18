@@ -3,12 +3,13 @@
 #include <math.h>
 
 #define NUMBER_OF_ROWS 3
+#define NUMBER_OF_ELEMENTS 8
 
 class Header {
 	public:
-        std::string h0="id";
-        std::string h1="name";
-        std::string h2="points";
+        std::string id="id";
+        std::string name="name";
+        std::string points="points";
 };
 
 class Person {
@@ -30,6 +31,35 @@ void PrintSin(int number_of_steps)
     {
         std::cout << "\t" << std::setw(10) << std::right << x << "\t" << std::setw(10) << std::right << std::sin(x) << std::endl;
         x = x + dx;
+    }
+}
+
+void PrintArr(int* arr, int len_arr) {
+    std::cout << "\n\t arr=\n(";
+    for (int n = 0; n < len_arr - 1; n++) {
+        std::cout << arr[n] << ", ";
+    }
+    std::cout << arr[len_arr - 1];
+    std::cout << ")" << std::endl;
+}
+
+void SortArr(int* arr, int len_arr) {
+    int max;
+    int i_max = 0;
+    int temp;
+    for (int i = 0; i < NUMBER_OF_ELEMENTS; i++) {
+        max = arr[i];
+        i_max = i;
+        for (int j = i; j < NUMBER_OF_ELEMENTS; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+                i_max = j;
+
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[i_max];
+        arr[i_max] = temp;
     }
 }
 
@@ -72,9 +102,9 @@ int main()
 	persons[2].name = "Peter";
 	persons[2].points = 1;
 
-    std::cout << "\t" <<header.h0;
-	std::cout << "\t" <<header.h1;
-	std::cout << "\t" <<header.h2;
+    std::cout << "\t" <<header.id;
+	std::cout << "\t" <<header.name;
+	std::cout << "\t" <<header.points;
 	std::cout << std::endl;
 
     for (int r = 0; r < NUMBER_OF_ROWS; r++) {
@@ -83,6 +113,17 @@ int main()
         std::cout << "\t"<< persons[r].points;
         std::cout << std::endl;
     }
+
+    std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+
+    int arr[NUMBER_OF_ELEMENTS] = { 1,3,6,7,4,8,5,64 };
+    int len_arr = sizeof(arr) / sizeof(arr[0]);
+
+    PrintArr(arr, len_arr);
+    SortArr(arr, len_arr);
+    PrintArr(arr, len_arr);
+
+    std::cout << std::endl;
     
     system("pause>0");
 }
