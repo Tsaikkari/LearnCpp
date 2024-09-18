@@ -63,6 +63,18 @@ void SortArr(int* arr, int len_arr) {
     }
 }
 
+void SortArrSlow(int* arr, int len_arr) {
+    for (int i = 0; i < len_arr; i++) {
+        for (int c = 0; c < len_arr - i - 1; c++) {
+            if (arr[c] < arr[c + 1]) {
+                int g = arr[c + 1];
+                arr[c + 1] = arr[c];
+                arr[c] = g;
+            }
+        }
+    }
+}
+
 int main()
 {
     int points[] = { 5,3,2 };
@@ -117,11 +129,16 @@ int main()
     std::cout << "-------------------------------------------------------" << std::endl << std::endl;
 
     int arr[NUMBER_OF_ELEMENTS] = { 1,3,6,7,4,8,5,64 };
+    int arr2[] = { 2,77,4,9 };
     int len_arr = sizeof(arr) / sizeof(arr[0]);
 
     PrintArr(arr, len_arr);
     SortArr(arr, len_arr);
     PrintArr(arr, len_arr);
+
+    PrintArr(arr2, 4);
+    SortArrSlow(arr2, 4);
+    PrintArr(arr2, 4);
 
     std::cout << std::endl;
     
