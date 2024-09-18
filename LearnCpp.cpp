@@ -77,6 +77,21 @@ void SortArrSlow(int* arr, int len_arr) {
 
 int main()
 {
+    int num_rows = 4;
+    int num_columns = 3;
+
+    R Table[MAX_ZAHL_DER_COLUMS];
+    Table[0] = { 3,1,8 };
+    //Table[0].columns[0] = 66; Table[0].columns[1] = 77;
+    Table[1] = { 4,9,11 };
+    Table[2] = { 2,2,17 };
+    Table[3] = { 19,111,8 };
+
+    Show2DArr(Table, num_rows, num_columns);
+
+
+    std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+
     int points[] = { 5,3,2 };
     std::string people[] = { "Hupu", "Tupu", "Lupu" };
     std::cout << "Hello " << people[0] << "," << std::endl;
